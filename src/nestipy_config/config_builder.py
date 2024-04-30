@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 from typing import Callable
 
-from nestipy_dynamic_module import ConfigurableModuleBuilder, DynamicModule
+from nestipy.dynamic_module import ConfigurableModuleBuilder, DynamicModule
 
 
 @dataclass
