@@ -578,13 +578,13 @@ files = [
 
 [[package]]
 name = "nestipy"
-version = "0.3.0"
+version = "0.3.5"
 description = "Nestipy is a Python framework built on top of BlackSheep that follows the modular architecture of NestJS"
 optional = false
 python-versions = "<4.0,>=3.10"
 files = [
-    {file = "nestipy-0.3.0-py3-none-any.whl", hash = "sha256:9b010f20fec8a5a647025b7512fbb571684b8df0b43c5e7c6de4707fd0b91762"},
-    {file = "nestipy-0.3.0.tar.gz", hash = "sha256:07f8bdab7bbd70ad4b938e4aa9af8426b20a54570fcf29d020e96597e579194b"},
+    {file = "nestipy-0.3.5-py3-none-any.whl", hash = "sha256:6abb7d9d4e87eb46b3dedc48645ab41e74451bc9f789c77ad66ea84e8089d028"},
+    {file = "nestipy-0.3.5.tar.gz", hash = "sha256:30d45bb50e4a12fe88ab0af0404b06092077d9d406137c1dd90d4645f7cb57b3"},
 ]
 
 [package.dependencies]

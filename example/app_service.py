@@ -1,22 +1,24 @@
+from typing import Annotated
+
 from nestipy.common import Injectable
 from nestipy_config import ConfigService
-from nestipy_ioc import Inject
+from nestipy.ioc import Inject
 
 
 @Injectable()
 class AppService:
-    config: Inject[ConfigService]
+    config: Annotated[ConfigService, Inject()]
 
     @classmethod
     async def get(cls):
         return "test"
 
     @classmethod
-    async def post(cls, data: str):
+    async def post(cls, data: dict):
         return "test"
 
     @classmethod
-    async def put(cls, id_: int, data: str):
+    async def put(cls, id_: int, data: dict):
         return "test"
 
     @classmethod
