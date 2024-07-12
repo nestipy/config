@@ -1,6 +1,9 @@
-from nestipy.common import Module
+from typing import Optional, Awaitable, Callable, Union, Type
 
-from .config_builder import ConfigurableModuleClass
+from nestipy.common import Module
+from nestipy.dynamic_module import DynamicModule
+
+from .config_builder import ConfigurableModuleClass, ConfigOption
 from .config_service import ConfigService
 
 
@@ -13,4 +16,25 @@ from .config_service import ConfigService
     ],
 )
 class ConfigModule(ConfigurableModuleClass):
-    ...
+
+    @classmethod
+    def for_root(cls, option: ConfigOption | None = ConfigOption(), is_global: bool = False):
+        module: DynamicModule = ConfigurableModuleClass.for_root(option)
+        module.is_global = option.is_global or is_global
+        return module
+
+    @classmethod
+    def for_root_async(
+            cls,
+            value: Optional[ConfigOption] = None,
+            factory: Callable[..., Union[Awaitable[ConfigOption], ConfigOption]] = None,
+            existing: Union[Type, str] = None,
+            use_class: Type = None,
+            inject: list = None,
+            imports: list = None,
+            extras: dict = None,
+            is_global: bool = False
+    ):
+        module: DynamicModule = ConfigurableModuleClass.for_root_async(value, factory, existing, use_class, inject, imports, extras)
+        module.is_global = is_global
+        return module
